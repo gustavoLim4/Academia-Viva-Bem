@@ -1,31 +1,31 @@
 <?php
 if (isset($_POST['nomeExercicio'])) {
 
-    $nomeExercicio =         $_POST['nomeExercicio'];
+    $nomeExercicio = $_POST['nomeExercicio'];
 
-    $descricaoExercicio =    $_POST['descricaoExercicio'];
+    $descricaoExercicio = $_POST['descricaoExercicio'];
 
-    $categoriasExercicio =   $_POST['categoriasExercicio'];
+    $categoriasExercicio = $_POST['categoriasExercicio'];
 
-    $statusExercicio =       $_POST['statusExercicio'];
+    $statusExercicio = $_POST['statusExercicio'];
 
-    $linkExercicio =         $_POST['linkExercicio'];
+    $linkExercicio = $_POST['linkExercicio'];
 
-    $arquivo =               $_FILES ['fotoExercicio'];
+    $arquivo = $_FILES['fotoExercicio'];
 
-    if($arquivo['erro']){
-        throw new Exception('Error' .$arquivo['error']); 
+    if ($arquivo['erro']) {
+        throw new Exception('Error' . $arquivo['error']);
     }
 
     // FUNÇÃO DO FILES DE TRATAMENTO DO ARQUIVO 👇
 
-    if (move_uploaded_file($arquivo['tmp_name'],'../img/exercicio/'.$arquivo['name'])){
+    if (move_uploaded_file($arquivo['tmp_name'], '../img/exercicio/' . $arquivo['name'])) {
 
         $fotoExercicio = 'exercicio/' . $arquivo['name']; // exercicio/agachamento.png
 
-    }else{
+    } else {
 
-        throw new Exception('Erro : Não foi possivel realizar o ulpload a imagem. '); 
+        throw new Exception('Erro : Não foi possivel realizar o ulpload a imagem. ');
 
     }
 
@@ -45,10 +45,10 @@ if (isset($_POST['nomeExercicio'])) {
     $exercicio->fotoExercicio = $fotoExercicio;
 
     $exercicio->linkExercicio = $linkExercicio;
-    
+
 
     $exercicio->Cadastrar();
-  
+
 
 }
 ?>
@@ -61,13 +61,15 @@ if (isset($_POST['nomeExercicio'])) {
         </div>
 
         <form action="index.php?p=exercicios&e=cadastrar" method="POST" enctype="multipart/form-data">
+
             <div class="card-body">
 
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group row">
                             <img src="../img/sem-foto.png" alt="Imagem Sem Foto" id="imgFoto">
-                            <input type="file" class="form-control" id="fotoExercicio" name="fotoExercicio" style="display:none;">
+                            <input type="file" class="form-control" id="fotoExercicio" name="fotoExercicio"
+                                style="display:none;">
                         </div>
 
                     </div>
@@ -77,14 +79,17 @@ if (isset($_POST['nomeExercicio'])) {
                         <div class="form-group row">
                             <label for="nomeExercicio" class="col-sm-2 col-form-label">Nome:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nomeExercicio" name="nomeExercicio" required="" placeholder="Informe seu nome:">
+                                <input type="text" class="form-control" id="nomeExercicio" name="nomeExercicio"
+                                    required="" placeholder="Informe seu nome:">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="descricaoExercicio" class="col-sm-2 col-form-label">Descrição:</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="descricaoExercicio" id="descricaoExercicio" cols="30" rows="10" required="" placeholder="Informe a descrição do exercício:"></textarea>
+                                <textarea class="form-control" name="descricaoExercicio" id="descricaoExercicio"
+                                    cols="30" rows="10" required=""
+                                    placeholder="Informe a descrição do exercício:"></textarea>
                             </div>
                         </div>
 
@@ -120,7 +125,8 @@ if (isset($_POST['nomeExercicio'])) {
                     <div class="form-group23 row">
                         <label for="linkExercicio" class="col-sm-2 col-form-label">Exercício:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="linkExercicio" name="linkExercicio" required="" placeholder="Informe o Link Exercício:">
+                            <input type="text" class="form-control" id="linkExercicio" name="linkExercicio" required=""
+                                placeholder="Informe o Link Exercício:">
                         </div>
                     </div>
 
@@ -139,11 +145,11 @@ if (isset($_POST['nomeExercicio'])) {
 
 
 <script>
-    document.getElementById('imgFoto').addEventListener('click', function() {
+    document.getElementById('imgFoto').addEventListener('click', function () {
         document.getElementById('fotoExercicio').click();
     });
 
-    document.getElementById('fotoExercicio').addEventListener('change', function(e) {
+    document.getElementById('fotoExercicio').addEventListener('change', function (e) {
 
         let imgFoto = document.getElementById('imgFoto');
         let arquivo = e.target.files[0];
@@ -151,7 +157,7 @@ if (isset($_POST['nomeExercicio'])) {
         if (arquivo) {
             let carregar = new FileReader();
 
-            carregar.onload = function(e) {
+            carregar.onload = function (e) {
                 imgFoto.src = e.target.result;
                 console.log(imgFoto.src);
             }

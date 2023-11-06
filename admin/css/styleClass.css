@@ -217,3 +217,24 @@ caption {
 .card-body {
     padding: 30px;
 }
+
+.form-group10 {
+    margin-bottom: 5%;
+    display: flex;
+
+}
+
+.data {
+    margin-left: 77.4%;
+    
+}
+
+.data input{
+
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    color: #4d4d4d;
+    padding: 5px;
+    
+    
+}
