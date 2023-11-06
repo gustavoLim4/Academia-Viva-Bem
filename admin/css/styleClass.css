@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.site {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 15px;
+    padding: 10px;
+
+}
+
+header img {
+    width: 12%;
+}
+
+
+
+main {
+    flex: 1;
+    display: flex;
+}
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+
+
+header div {
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #23475f;
+}
+
+
+
+header div h2 {
+
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+/* ASIDE */
+
+
+
+aside {
+
+    background-color: #23475f;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+    /* height: 807px; */
+}
+
+
+
+aside a {
+
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #7bd2cc;
+    font-size: 30px;
+    margin-bottom: 20px;
+
+}
+
+.menuAtivo {
+    color: #ffd74c;
+
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+footer div {
+
+    width: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.direitos {
+    background-color: #7bd2cc;
+
+}
+
+
+.desenvolvido {
+    background-color: #23475f;
+
+}
+
+/* table {
+    display: flex;
+    justify-content: center;
+    
+} */
+
+
+caption {
+    text-align: center;
+}
+
+.table-responsivo th {
+    padding: 20px;
+    background-color: #23475f;
+    color: #ffd74c;
+    text-align: center;
+}
+
+.row img {
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.instruto {
+    width: 40%;
+
+}
+
+.exercicio {
+    width: 156%;
+}
+
+.aluno {
+    width: 159%;
+}
+
+.table {
+    border-color: #23475f !important;
+}
+
+.trTitulo {
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.trTitulo th {
+    color: #ffc500;
+    background-color: #23475f;
+}
+
+
+.imgListar {
+    width: 30%;
+}
+
+
+.form-dash .row {
+    margin-bottom: 2%;
+    align-items: baseline;
+}
+
+.form-dash textarea {
+    height: 150px;
+    resize: none;
+}
+
+.form-group23 {
+    width: 68%;
+    display: flex;
+    margin-left: 33%;
+    margin-bottom: 35px;
+}
+
+.box {
+    padding: 10%;
+}
+
+.card-body {
+    padding: 30px;
+}
