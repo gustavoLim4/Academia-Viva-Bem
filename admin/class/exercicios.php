@@ -58,7 +58,7 @@ class ExerciciosClass
             VALUES 
                                        ('" . $this->nomeExercicio . "', 
                                         '" . $this->descricaoExercicio ."', 
-                                        '" . $this->categoriasExercicio ."', 
+                                        '" . $this->categoriasExercicio."', 
                                         '" . $this->statusExercicio . "',
                                         '" . $this->fotoExercicio . "')";
 

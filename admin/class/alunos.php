@@ -3,7 +3,6 @@
 require_once('conexao.php');
 
 class alunosClass
-
 {
 
     public $nomeAluno;
@@ -49,8 +48,33 @@ class alunosClass
         $resultado = $conn->query($sql);
         $lista = $resultado->fetchAll();
         return $lista;
-        
+
     }
 
+    public function Cadastrar() {
+
+
+            $query = " INSERT INTO tblalunos (  nomeAluno,
+                                                dataNascAluno,
+                                                emailAluno,
+                                                senhaAluno,
+                                                statusAluno, 
+                                                fotoAluno) 
+            
+                    VALUES
+    
+                                            ('" . $this->nomeAluno . "',    
+                                            '" . $this->dataNascAluno . "',    
+                                            '" . $this->emailAluno . "',    
+                                            '" . $this->senhaAluno . "',    
+                                            '" . $this->statusAluno . "',    
+                                            '" . $this->fotoAluno . "') ";
+
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+
+        echo "<script>document.location='index.php?p=alunos'</script>"; // 👈🏽 QUANDO TERMINAR DE PREECHER VOLTARA PARA A TABELA ATULIZADA COM NOVOS DADOS 
+
+    }
 
 }
