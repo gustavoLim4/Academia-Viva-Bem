@@ -68,7 +68,7 @@ if (isset($_POST['nomeAluno'])) {
 
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title"> Cadastro de Exercícios</h3>
+            <h3 class="card-title"> Cadastro de Alunos</h3>
         </div>
 
         <form action="index.php?p=alunos&e=cadastrar" method="POST" enctype="multipart/form-data">
@@ -88,15 +88,15 @@ if (isset($_POST['nomeAluno'])) {
                     <div class="col-md-8 form-dash">
 
                         <div class="form-group10">
-                            <label for="nomeAluno" class="col-sm-2 col-form-label">Nome:</label>
+                            <label for="nome" class="col-sm-2 col-form-label">Nome:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nomeAluno" name="nomeAluno  "
+                                <input type="text" class="form-control" id="nomeAluno" name="nomeAluno"
                                     required="" placeholder="*Informe seu nome:">
                             </div>
                         </div>
 
                         <div class="form-group10 ">
-                            <label for="emailAluno" class="col-sm-2 col-form-label">E-mail:</label>
+                            <label for="email" class="col-sm-2 col-form-label">E-mail:</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="emailAluno" name="emailAluno"
                                     required="" placeholder="*Informe seu E-mail:">
@@ -104,7 +104,7 @@ if (isset($_POST['nomeAluno'])) {
                         </div>
 
                         <div class="form-group10 ">
-                            <label for="senhaAluno" class="col-sm-2 col-form-label">Senha:</label>
+                            <label for="senha" class="col-sm-2 col-form-label">Senha:</label>
                             <div class="col-sm-10">
                                 <input type="password" class="form-control" id="senhaAluno" name="senhaAluno"
                                     required="" placeholder="*digite sua senha:">
@@ -113,7 +113,7 @@ if (isset($_POST['nomeAluno'])) {
                         <div class="dois22" >
                             <div class="form-group col-sm-4">
 
-                                <select class="form-select col-sm-2" name="statusAluno" required>
+                                <select class="form-select col-sm-2" name="statusAluno" id="statusAluno" required>
                                     <option selected="">Status do Aluno</option>
                                     <option value="ATIVO">ATIVO</option>
                                     <option value="DESATIVA">DESATIVADO</option>
@@ -123,7 +123,7 @@ if (isset($_POST['nomeAluno'])) {
                             </div>
 
                             <div class="data">
-                                <input id="dataNascAluno" type="date" name ="dataNascAluno" />
+                                <input id="dataNascAluno" type="date" name ="dataNascAluno" id = "dataNascAluno" />
                             </div>
 
                         </div>
@@ -132,14 +132,15 @@ if (isset($_POST['nomeAluno'])) {
 
                 </div>
 
-                <div class="btn000">
-                    <button type="submit" class="btn btn-primary">Cadastrar Exercício</button>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-primary">Cadastrar Aluno</button>
                 </div>
 
             </div>
     </div>
 
 </div>
+
 </form>
 </div>
 
