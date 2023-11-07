@@ -7,6 +7,7 @@ class ExerciciosClass
 {
     public $nomeExercicio;
     public $descricaoExercicio;
+    public $categoriasExercicio;
     public $statusExercicio;
     public $fotoExercicio;
     public $emailFuncionario;
