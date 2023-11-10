@@ -1,3 +1,16 @@
+<?php
+
+    require_once ('admin/class/exercicios.php');
+
+    $exercicio = new ExerciciosClass();
+    $lista = $exercicio->ListarExercicio();
+
+    
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

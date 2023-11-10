@@ -1,9 +1,9 @@
 <?php
 
 
-    //PARA ENVIAR PARA O BANCO DE DADOS 👇🏽
+    //PARA ENVIAR VIA "POST" PARA O BANCO DE DADOS 👇🏽
 
-if (isset($_POST['nomeAluno'])) {
+if (isset($_POST['nomeAluno'])) { // 👈🏽 PARA SABER SE A VARIAVEL ESTA DEFINIDA
 
     $nomeAluno = $_POST['nomeAluno'];
 
@@ -25,33 +25,33 @@ if (isset($_POST['nomeAluno'])) {
 
     
 
-    if (move_uploaded_file($arquivo['tmp_name'], '../img/aluno/' . $arquivo['name'])) {  //  👈🏽  PARA QUE VA DIRETO PARA A PASTA DE ARQUIVOS "aluno" 
+    if (move_uploaded_file($arquivo['tmp_name'], '../img/aluno/' . $arquivo['name'])) {  //  👈🏽 "CAMINHO" PARA QUE VA DIRETO PARA A PASTA DE ARQUIVOS "aluno" 
 
-        $fotoAluno = 'aluno/' . $arquivo['name']; // exercicio/agachamento.png
+        $fotoAluno = 'aluno/' . $arquivo['name']; // exercicio/agachamento.png           //  👈🏽  "NOME" PARA QUE VA DIRETO PARA A PASTA DE ARQUIVOS "aluno" 
 
     } else {
 
-        throw new Exception('Erro : Não foi possivel realizar o ulpload a imagem. '); // 👈🏽   CANSO DER ERRO ESSA MENSAGEM SERA MOSTRA NA TELA
+        throw new Exception('Erro : Não foi possivel realizar o ulpload a imagem. '); // 👈🏽   CASO DER ERRO ESSA MENSAGEM SERA MOSTRA NA TELA
 
     }
     
    // PARA APARECER NO SITE O NOVO CADASTRO 👇🏽
 
-    require_once('class/alunos.php');
+    require_once('class/alunos.php'); //PUXAR A PAGINA QUE ESTA DENTRO DO "class" NOME DA PAGINA "alunos.php"
 
     $aluno = new alunosClass();
 
-    $aluno->nomeAluno = $nomeAluno;
+    $aluno->nomeAluno = $nomeAluno; // ATRIBUIÇÕES FUNÇÃO "CADASTRAR"
 
-    $aluno->dataNascAluno = $dataNascAluno;
+    $aluno->dataNascAluno = $dataNascAluno;  // ATRIBUIÇÕES FUNÇÃO "CADASTRAR"
 
-    $aluno->emailAluno = $emailAluno;
+    $aluno->emailAluno = $emailAluno;  // ATRIBUIÇÕES FUNÇÃO "CADASTRAR"
 
-    $aluno->senhaAluno = $senhaAluno;
+    $aluno->senhaAluno = $senhaAluno; // ATRIBUIÇÕES FUNÇÃO "CADASTRAR"
 
-    $aluno->statusAluno = $statusAluno;
+    $aluno->statusAluno = $statusAluno;  // ATRIBUIÇÕES FUNÇÃO "CADASTRAR"
 
-    $aluno->fotoAluno = $fotoAluno;
+    $aluno->fotoAluno = $fotoAluno;  // ATRIBUIÇÕES FUNÇÃO "CADASTRAR"
 
 
     $aluno->Cadastrar();
@@ -61,9 +61,10 @@ if (isset($_POST['nomeAluno'])) {
 
 ?>
 
-<!-- CAIXA DE PREENCHIMENTO DO FORMULARIO  -->
+<!-- 👇🏽 CAIXA DE PREENCHIMENTO DO FORMULARIO 👇🏽  -->
 
 <div class="col-md-12">
+    
 
 
     <div class="card card-info">
@@ -148,6 +149,8 @@ if (isset($_POST['nomeAluno'])) {
 
 
 <script>
+
+    // 👇🏽script para o input se transformar em uma "imagem" quando pegamos a foto no explorador de arquivos ela monstre no lugar da "imagem"
     document.getElementById('imgFoto').addEventListener('click', function () {
         document.getElementById('fotoAluno').click();
     });

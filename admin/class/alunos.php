@@ -53,16 +53,18 @@ class alunosClass
 
     public function Cadastrar() {
 
+         // insert direto do banco de dados puxando tudo que esta la dentro 👇🏽  
 
             $query = " INSERT INTO tblalunos (  nomeAluno,
                                                 dataNascAluno,
-                                                emailAluno,
+                                                emailAluno, 
                                                 senhaAluno,
                                                 statusAluno, 
                                                 fotoAluno) 
             
                     VALUES
-    
+                                        -- THIS -> 👇🏽 para acessar propriedades/métodos do objeto
+
                                             ('" . $this->nomeAluno . "',    
                                             '" . $this->dataNascAluno . "',    
                                             '" . $this->emailAluno . "',    
