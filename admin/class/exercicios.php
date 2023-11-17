@@ -11,7 +11,10 @@ class ExerciciosClass
     public $categoriasExercicio;
     public $statusExercicio;
     public $fotoExercicio;
-    public $emailFuncionario;
+    public $altExercicio;
+
+
+
 
 
     public function __construct($id = false)
@@ -91,17 +94,31 @@ class ExerciciosClass
         $lista = $resultado->fetchAll();
 
         foreach ($lista as $linha) {
-            $this->nomeExercicio =          $linha['nomeExercicio'];
-            $this->descricaoExercicio =     $linha['descricaoExercicio'];
-            $this->categoriasExercicio =    $linha['categoriasExercicio'];
-            $this->statusExercicio =        $linha['statusExercicio'];
-            $this->fotoExercicio =          $linha['fotoExercicio'];
+            $this->nomeExercicio = $linha['nomeExercicio'];
+            $this->descricaoExercicio = $linha['descricaoExercicio'];
+            $this->categoriasExercicio = $linha['categoriasExercicio'];
+            $this->statusExercicio = $linha['statusExercicio'];
+            $this->fotoExercicio = $linha['fotoExercicio'];
+
 
         }
+
     }
 
+    public function Atualizar()
+    {
+        $query = "UPDATE tblexercicios SET nomeExercicio =                     '" . $this->nomeExercicio . "',
+                                            altExercicio =                     '" . $this->altExercicio . "', 
+                                            descricaoExercicio =               '" . $this->descricaoExercicio . "',
+                                            categoriasExercicio =              '" . $this->categoriasExercicio . "',
+                                            statusExercicio =                  '" . $this->statusExercicio . "',
+                                            fotoExercicio =                    '" . $this->fotoExercicio . "' 
+                                             WHERE tblexercicios.idExercicio =" . $this->idExercicio;
+
+        $conn = conexao::Ligarconexao();
+        $conn->exec($query);
+        echo "<script> document.location='index.php?p=exercicios'</script>";
 
 
-
-
-} // FIM CLASS CONTATO
+    } // FIM CLASS CONTATO
+}
