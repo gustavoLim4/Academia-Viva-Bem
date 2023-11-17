@@ -5,14 +5,24 @@ require_once('conexao.php');
 
 class ExerciciosClass
 {
+    public $idExercicio;
     public $nomeExercicio;
     public $descricaoExercicio;
     public $categoriasExercicio;
     public $statusExercicio;
     public $fotoExercicio;
     public $emailFuncionario;
-  
-  
+
+
+    public function __construct($id = false)
+    {
+        if ($id) {
+            $this->idExercicio = $id;
+            $this->Carregar();
+        }
+    }
+
+
 
     public function Inserir()
     {
@@ -23,11 +33,11 @@ class ExerciciosClass
                                             fotoExercicio)
 
                 VALUES 
-                                       ('" . $this->nomeExercicio . "', 
-                                        '" . $this->descricaoExercicio . "',
-                                        '" . $this->categoriasExercicio ."',  
-                                        '" . $this->statusExercicio . "',
-                                        '" . $this->fotoExercicio . "')";
+                                            ('" . $this->nomeExercicio . "', 
+                                             '" . $this->descricaoExercicio . "',
+                                             '" . $this->categoriasExercicio . "',  
+                                             '" . $this->statusExercicio . "',
+                                             '" . $this->fotoExercicio . "')";
 
 
         $conn = conexao::Ligarconexao();
@@ -35,18 +45,20 @@ class ExerciciosClass
         $conn->exec($sql);
 
     }
-    public function ListarExercicio() {
+    public function ListarExercicio()
+    {
 
         $sql = "SELECT * FROM tblexercicios WHERE statusExercicio = 'ATIVO' ORDER BY idExercicio ASC";
-        $conn = conexao :: Ligarconexao();
-        $resultado = $conn -> query($sql);
-        $lista = $resultado -> fetchAll();
+        $conn = conexao::Ligarconexao();
+        $resultado = $conn->query($sql);
+        $lista = $resultado->fetchAll();
         return $lista;
 
 
     }
     // cadastrar 
-    public function Cadastrar(){
+    public function Cadastrar()
+    {
 
 
         $query = " INSERT INTO tblexercicios (nomeExercicio, 
@@ -58,19 +70,37 @@ class ExerciciosClass
                                               
             VALUES 
                                        ('" . $this->nomeExercicio . "', 
-                                        '" . $this->descricaoExercicio ."', 
-                                        '" . $this->categoriasExercicio."', 
+                                        '" . $this->descricaoExercicio . "', 
+                                        '" . $this->categoriasExercicio . "', 
                                         '" . $this->statusExercicio . "',
                                         '" . $this->fotoExercicio . "')";
 
-            $conn = Conexao::LigarConexao();
-            $conn->exec($query);
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
 
-           echo "<script> document.location='index.php?p=exercicios' </script>";
+        echo "<script> document.location='index.php?p=exercicios' </script>";
 
     }
 
-    
+    public function Carregar()
+    {
+
+        $query = "SELECT * FROM tblexercicios WHERE idExercicio = " . $this->idExercicio;
+        $conn = conexao::Ligarconexao();
+        $resultado = $conn->query($query);
+        $lista = $resultado->fetchAll();
+
+        foreach ($lista as $linha) {
+            $this->nomeExercicio =          $linha['nomeExercicio'];
+            $this->descricaoExercicio =     $linha['descricaoExercicio'];
+            $this->categoriasExercicio =    $linha['categoriasExercicio'];
+            $this->statusExercicio =        $linha['statusExercicio'];
+            $this->fotoExercicio =          $linha['fotoExercicio'];
+
+        }
+    }
+
+
 
 
 

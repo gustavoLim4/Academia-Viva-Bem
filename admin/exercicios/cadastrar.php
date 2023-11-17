@@ -141,7 +141,6 @@ if (isset($_POST['nomeExercicio'])) {
     </form>
 </div>
 
-</div>
 
 
 <script>
