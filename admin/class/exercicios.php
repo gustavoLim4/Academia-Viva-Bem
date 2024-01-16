@@ -8,7 +8,7 @@ class ExerciciosClass
     public $idExercicio;
     public $nomeExercicio;
     public $descricaoExercicio;
-    public $categoriasExercicio;
+    public $grupoMuscularExercicio;
     public $statusExercicio;
     public $fotoExercicio;
     public $altExercicio;
@@ -31,14 +31,14 @@ class ExerciciosClass
     {
         $sql = " INSERT INTO tblexercicios (nomeExercicio, 
                                             descricaoExercicio, 
-                                            categoriasExercicio,
+                                            grupoMuscularExercicio,
                                             statusExercicio, 
                                             fotoExercicio)
 
                 VALUES 
                                             ('" . $this->nomeExercicio . "', 
                                              '" . $this->descricaoExercicio . "',
-                                             '" . $this->categoriasExercicio . "',  
+                                             '" . $this->grupoMuscularExercicio. "',  
                                              '" . $this->statusExercicio . "',
                                              '" . $this->fotoExercicio . "')";
 
@@ -66,7 +66,7 @@ class ExerciciosClass
 
         $query = " INSERT INTO tblexercicios (nomeExercicio, 
                                               descricaoExercicio, 
-                                              categoriasExercicio,
+                                              grupoMuscularExercicio,
                                               statusExercicio, 
                                               fotoExercicio)
                                               
@@ -74,7 +74,7 @@ class ExerciciosClass
             VALUES 
                                        ('" . $this->nomeExercicio . "', 
                                         '" . $this->descricaoExercicio . "', 
-                                        '" . $this->categoriasExercicio . "', 
+                                        '" . $this->grupoMuscularExercicio. "', 
                                         '" . $this->statusExercicio . "',
                                         '" . $this->fotoExercicio . "')";
 
@@ -96,7 +96,7 @@ class ExerciciosClass
         foreach ($lista as $linha) {
             $this->nomeExercicio = $linha['nomeExercicio'];
             $this->descricaoExercicio = $linha['descricaoExercicio'];
-            $this->categoriasExercicio = $linha['categoriasExercicio'];
+            $this->grupoMuscularExercicio	 = $linha['grupoMuscularExercicio'];
             $this->statusExercicio = $linha['statusExercicio'];
             $this->fotoExercicio = $linha['fotoExercicio'];
 
@@ -110,7 +110,7 @@ class ExerciciosClass
         $query = "UPDATE tblexercicios SET nomeExercicio =                     '" . $this->nomeExercicio . "',
                                             altExercicio =                     '" . $this->altExercicio . "', 
                                             descricaoExercicio =               '" . $this->descricaoExercicio . "',
-                                            categoriasExercicio =              '" . $this->categoriasExercicio . "',
+                                            categoriasExercicio =              '" . $this->grupoMuscularExercicio. "',
                                             statusExercicio =                  '" . $this->statusExercicio . "',
                                             fotoExercicio =                    '" . $this->fotoExercicio . "' 
                                              WHERE tblexercicios.idExercicio =" . $this->idExercicio;

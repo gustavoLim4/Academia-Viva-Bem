@@ -38,7 +38,7 @@ $lista = $exercicio->ListarExercicio()
                         <td><?php echo $linha['idExercicio']; ?></td>
                         <td><?php echo $linha['nomeExercicio']  ?></td>
                         <td><?php echo $linha['descricaoExercicio']  ?></td>
-                        <td><?php echo $linha['categoriasExercicio'] ?></td>
+                        <td><?php echo $linha['grupoMuscularExercicio'] ?></td>
                         <td><?php echo $linha['statusExercicio']  ?></td>
 
                         <td><img src="../img/<?php echo $linha['fotoExercicio'] ?>" alt="<?php echo $linha['nomeExercicio']?>"></td>

@@ -46,7 +46,7 @@ $lista = $instrutores->ListarInstrutores()
         <tbody>
             <?php foreach ($lista as $linha) : ?>
                 <tr>
-                    <td><?php echo $linha['idfuncionario']; ?></td>
+                    <td><?php echo $linha['idFuncionario']; ?></td>
 
                     <td><?php echo $linha['nomeFuncionario']; ?></td>
 
@@ -60,7 +60,7 @@ $lista = $instrutores->ListarInstrutores()
 
                     <td><?php echo $linha['senhaFuncionario']; ?></td>
 
-                    <td><?php echo $linha['telefoneFuncionrio']; ?></td>
+                    <td><?php echo $linha['telefoneFuncionario']; ?></td>
 
                     <td><?php echo $linha['dataAdmissaoFuncionario']; ?></td>
 
