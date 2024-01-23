@@ -5,11 +5,10 @@ if (isset($_POST['nomeExercicio'])) {
 
     $descricaoExercicio = $_POST['descricaoExercicio'];
 
-    $categoriasExercicio = $_POST['categoriasExercicio'];
+    $grupoMuscularExercicio = $_POST['grupoMuscularExercicio'];
 
     $statusExercicio = $_POST['statusExercicio'];
 
-    $linkExercicio = $_POST['linkExercicio'];
 
     $arquivo = $_FILES['fotoExercicio'];
 
@@ -38,13 +37,13 @@ if (isset($_POST['nomeExercicio'])) {
 
     $exercicio->descricaoExercicio = $descricaoExercicio;
 
-    $exercicio->categoriasExercicio = $categoriasExercicio;
+    $exercicio->grupoMuscularExercicio = $grupoMuscularExercicio;
 
     $exercicio->statusExercicio = $statusExercicio;
 
     $exercicio->fotoExercicio = $fotoExercicio;
 
-    $exercicio->linkExercicio = $linkExercicio;
+  
 
 
     $exercicio->Cadastrar();
@@ -96,7 +95,7 @@ if (isset($_POST['nomeExercicio'])) {
                         <div class="row">
 
                             <div class="form-group col-sm-6 offset-md-2">
-                                <select class="form-select col-sm-2" name="categoriasExercicio" required>
+                                <select class="form-select col-sm-2" name="grupoMuscularExercicio" required>
                                     <option selected="">Seleciona a opção de exercício</option>
                                     <option value="Peito">Peito</option>
                                     <option value="Pernas">Pernas</option>

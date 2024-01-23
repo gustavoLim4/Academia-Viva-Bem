@@ -1,5 +1,5 @@
 <?php
-$id = $_GET["id"];
+$id = $_GET['id'];
 require_once("class/exercicios.php");
 $exercicio = new ExerciciosClass($id);
 
@@ -7,11 +7,13 @@ $exercicio = new ExerciciosClass($id);
 
 if (isset($_POST['nomeExercicio'])) {
 
+    
+
     $nomeExercicio = $_POST['nomeExercicio'];
 
     $descricaoExercicio = $_POST['descricaoExercicio'];
 
-    $categoriasExercicio = $_POST['categoriasExercicio'];
+    $categoriasExercicio = $_POST['grupoMuscularExercicio'];
 
     $statusExercicio = $_POST['statusExercicio'];
 
@@ -49,7 +51,7 @@ if (isset($_POST['nomeExercicio'])) {
 
     $exercicio->descricaoExercicio = $descricaoExercicio;
 
-    $exercicio->categoriasExercicio = $categoriasExercicio;
+    $exercicio->grupoMuscularExercicio = $grupoMuscularExercicio;
 
     $exercicio->statusExercicio = $statusExercicio;
 
@@ -114,8 +116,8 @@ if (isset($_POST['nomeExercicio'])) {
 
                             <div class="form-group col-sm-6 offset-md-2">
                                 <select class="form-select col-sm-2" name="categoriasExercicio" required>
-                                    <option value="<?php echo $exercicio->categoriasExercicio ?>">
-                                        <?php echo $exercicio->categoriasExercicio ?>
+                                    <option value="<?php echo $exercicio->grupoMuscularExercicio ?>">
+                                        <?php echo $exercicio->grupoMuscularExercicio ?>
                                     </option>
                                     <option value="Peito">Peito</option>
                                     <option value="Pernas">Pernas</option>

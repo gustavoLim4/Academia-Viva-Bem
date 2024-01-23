@@ -110,7 +110,7 @@ class ExerciciosClass
         $query = "UPDATE tblexercicios SET nomeExercicio =                     '" . $this->nomeExercicio . "',
                                             altExercicio =                     '" . $this->altExercicio . "', 
                                             descricaoExercicio =               '" . $this->descricaoExercicio . "',
-                                            categoriasExercicio =              '" . $this->grupoMuscularExercicio. "',
+                                            grupoMuscularExercicio =              '" . $this->grupoMuscularExercicio. "',
                                             statusExercicio =                  '" . $this->statusExercicio . "',
                                             fotoExercicio =                    '" . $this->fotoExercicio . "' 
                                              WHERE tblexercicios.idExercicio =" . $this->idExercicio;
@@ -121,4 +121,14 @@ class ExerciciosClass
 
 
     } // FIM CLASS CONTATO
+
+
+
+
+    public function DESATIVA() {
+        $sql = "UPDATE set statusExercicio = 'DESATIVADO' where idExercicio = $this->idExercicio";
+        $conn = conexao::Ligarconexao();
+        $conn -> exec($sql);
+        echo "<script> document.location='index.php?p=exercicios'</script>";
+    }
 }

@@ -5,6 +5,7 @@ require_once('conexao.php');
 class alunosClass
 {
 
+    public $idAluno;
     public $nomeAluno;
     public $dataNascAluno;
     public $emailAluno;
@@ -79,4 +80,14 @@ class alunosClass
 
     }
 
+    public function desativar() {
+        $sql = "UPDATE tblalunos set statusAluno = 'DESATIVADO' where idAluno = $this->idAluno";
+        $conn = conexao::Ligarconexao();
+        $conn -> exec($sql);
+
+        echo "<script> document.location='index.php?p=alunos' </script>";
+    }
+
 }
+
+
