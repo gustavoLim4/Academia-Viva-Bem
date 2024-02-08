@@ -28,8 +28,6 @@ if (isset($_POST['email'])) {
 
     $contato->mensagemContato = $mens;
 
-
-
     $contato->Inserir();
 
 
@@ -148,7 +146,6 @@ if (isset($_POST['email'])) {
 
 
                <div> <form action="#" method="POST">
-
                     <div class="formulario">
 
                         <div class="formu">

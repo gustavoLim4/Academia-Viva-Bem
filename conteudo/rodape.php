@@ -61,3 +61,24 @@
         <h2>Desenvolvido por Alessandro e Ricardo</h2>
     </section>
 </footer>
+
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()" id="cloose">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="buttologar">
+                <button type="button" onclick="carregarLogin()">Login</button>
+            </div>
+        </form>
+        <div id="msgLogin"></div>
+    </div>
+</div>

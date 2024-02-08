@@ -19,7 +19,7 @@
             <nav class="menu">
                 <button class="botao-fecha"></button>
                 <ul>
-                    <li><a href="index.php" class="ativo"> Home</a></li>
+                    <li><a href="index.php" class="ativo">Home</a></li>
                     <li><a href="sobre.php">Sobre</a></li>
                     
                     <li class="subMenu">
@@ -37,7 +37,7 @@
 
                     <!-- <button>Login</button> -->
                 </ul>
-                <button>Login</button>
+                <button id="loginButton" type="button">Entrar</button>
             </nav>
         </div><!--FIM DO TOPO 02-->
 

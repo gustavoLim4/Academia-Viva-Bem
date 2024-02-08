@@ -49,14 +49,14 @@ class alunosClass
         $resultado = $conn->query($sql);
         $lista = $resultado->fetchAll();
         return $lista;
-
     }
 
-    public function Cadastrar() {
+    public function Cadastrar()
+    {
 
-         // insert direto do banco de dados puxando tudo que esta la dentro 👇🏽  
+        // insert direto do banco de dados puxando tudo que esta la dentro 👇🏽  
 
-            $query = " INSERT INTO tblalunos (  nomeAluno,
+        $query = " INSERT INTO tblalunos (  nomeAluno,
                                                 dataNascAluno,
                                                 emailAluno, 
                                                 senhaAluno,
@@ -80,14 +80,47 @@ class alunosClass
 
     }
 
-    public function desativar() {
+    public function desativar()
+    {
         $sql = "UPDATE tblalunos set statusAluno = 'DESATIVADO' where idAluno = $this->idAluno";
         $conn = conexao::Ligarconexao();
-        $conn -> exec($sql);
+        $conn->exec($sql);
 
         echo "<script> document.location='index.php?p=alunos' </script>";
     }
 
+    public function verificarLogin()
+    {
+
+        $sql = "SELECT * FROM tblalunos WHERE emailAluno = '".$this->emailAluno."' and senhaAluno = '".$this->senhaAluno."'";
+        $conn = conexao::Ligarconexao();
+        $resultado = $conn->query($sql);
+        $aluno = $resultado->fetch();
+
+        if ($aluno) {
+            return $aluno['idAluno'];
+        } else {
+            return false;
+        }
+    }
 }
 
+if (isset($_POST['email'])) {
 
+    $aluno = new alunosClass();
+
+    $emailLogin = $_POST['email'];
+    $senhaLogin = $_POST['password'];
+
+
+    $aluno->emailAluno = $emailLogin;
+    $aluno->senhaAluno = $senhaLogin;
+
+    if ($idAluno = $aluno->verificarLogin()) {
+       session_start();
+       $_SESSION['$idAluno'] = $idAluno;
+       echo json_encode (['success'=> true ,'message' => 'Login foi realizado com sucesso' , 'idAluno' => $idAluno]);
+    } else {
+        echo json_encode (['success'=> true ,'message' => 'Email ou senha invalido']);
+    }
+}
