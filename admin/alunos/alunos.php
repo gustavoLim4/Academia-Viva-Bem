@@ -1,6 +1,6 @@
 <?php
 
-$pagina = @$_GET['e'];
+$pagina = @$_GET['p'];
 
 
 

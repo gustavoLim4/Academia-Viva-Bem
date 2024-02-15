@@ -99,46 +99,77 @@ function closeModal() {
   modal.style.display = "none";
 }
 
-function carregarLogin() {
 
-  //pegar dados do form
+function carregarLogin(){
 
-  $("#loginForm").click(function () {
+  $('#loginForm').click(function () {
+      var formData = $('#loginForm').serialize();
 
-    var formData = $("#loginForm").serialize();
+      //Enviar a solicitação - class Login
 
-    $.ajax({
-      url: './admin/class/alunos.php',
-      method: 'POST',
-      data: formData,
-      dataType: 'json',
-      success: function(data){
+      $.ajax({
+          url: './admin/class/alunos.php',
+          method: 'POST',
+          data: formData,
+          dataType: 'json',
+          success: function (data) {
 
-        if(data.success){
-          //login sucesso
-          $('#msgLogin').html('<div class="msgSuccess">' + data.message+  '</div>')
+              console.log(data);
+              if (data.success) {
+                  // Login Bem Sucedido
+                  $('#msgLogin').html('<div class = "msgSuccess">' + data.message + '</div>');
+                  var idAluno = data.idAluno;
+                  window.location.href = 'http://localhost/vivabem/admin/index.php?p=alunos';
+              } else {
+                  $('#msgLogin').html('<div class = "msgInvalido">' + data.message + '</div>');
+              }
+          },
+          error: function (xhr, status, error) {
 
-          var idAluno = data.idAluno;
+              console.log(error);
 
-          window.location.href = 'http://localhost/vivabem/admin/index.php?p=Dashboard'
-          
-        } else {
+          }
+      })
 
-          //login invalido
-          $('#msgLogin').html('<div class="msgInvalido">'+data.message+'</div>')
-        }
-       
-      
-      },
-      erro: function(xhr , status , error) {
-          console.log(error);
-      }
-      
-    });
+      $.ajax({
+          url: './admin/class/instrutores.php',
+          method: 'POST',
+          data: formData,
+          dataType: 'json',
+          success: function (data) {
 
+              console.log(data);
+              if (data.success) {
+                  // Login Bem Sucedido
+                  $('#msgLogin').html('<div class = "msgSucess">' + data.message + '</div>');
+                  var idFuncionario = data.idFuncionario;
+                  window.location.href = 'http://localhost/vivabem/admin/index.php?p=instrutores';
+              } else {
+                  $('#msgLogin').html('<div class = "msgInvalido">' + data.message + '</div>');
+              }
+          },
+          error: function (xhr, status, error) {
+
+              console.log(error);
+
+          }
+      })
   });
-
 }
+
+
+  //Verificar se o form está pegando os dados
+
+  // método usando o Jquery
+  var formData = $("#loginForm").serialize();
+  console.log("Dados do Formulário:" + formData);
+
+  // método normal
+  var email = document.getElementById("email").value;
+  var senha = document.getElementById("password").value;
+  console.log("Email:" + email);
+  console.log("Senha:" + senha);
+
 
 // Get the modal
 var modal = document.getElementById("loginModal");

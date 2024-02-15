@@ -63,29 +63,19 @@ if (isset($_SESSION['idAluno'])) {
     <main>
         <aside>
 
-            <a href="index.php?p=Dashboard" class="<?php echo ((@$_GET['p'] == 'dashboard') || (@$_GET['p'] == '')) ? 'menuAtivo' : ''; ?>">DASHBOARD</a>
+        
+            <a href="index.php?p=dashboard" class="<?php echo (($pagina == 'dashboard') || ($pagina == '')) ? 'menuAtivo' : ''; ?>">DASHBOARD</a>
+            <a href="index.php?p=matriculas" class="<?php echo ($pagina == 'matriculas') ? 'menuAtivo' : ''; ?>">MATRÍCULAS</a>
+            <a href="index.php?p=exercicios" class="<?php echo ($pagina == 'exercicios') ? 'menuAtivo' : ''; ?>">EXERCÍCIOS</a>
+            <a href="index.php?p=aulas" class="<?php echo ($pagina == 'aulas') ? 'menuAtivo' : ''; ?>">AULAS</a>
+            <a href="index.php?p=treinos" class="<?php echo ($pagina == 'treinos') ? 'menuAtivo' : ''; ?>">TREINOS</a>
+            <a href="index.php?p=instrutores" class="<?php echo ($pagina == 'instrutores') ? 'menuAtivo' : ''; ?>">INSTRUTORES</a>
+            <a href="index.php?p=alunos" class="<?php echo ($pagina == 'alunos') ? 'menuAtivo' : ''; ?>">ALUNOS</a>
+            <a href="index.php?p=pagamentos" class="<?php echo ($pagina == 'pagamentos') ? 'menuAtivo' : ''; ?>">PAGAMENTOS</a>
+            <a href="index.php?p=relatorio" class="<?php echo ($pagina == 'relatorio') ? 'menuAtivo' : ''; ?>">RELATÓRIO</a>
+            <a href="index.php?p=contato" class="<?php echo ($pagina == 'contato') ? 'menuAtivo' : ''; ?>">E-MAIL</a>
+            <a href="index.php?p=ajuda" class="<?php echo ($pagina == 'ajuda') ? 'menuAtivo' : ''; ?>">AJUDA E SUPORTE</a>
 
-            <a href="index.php?p=banner" class="<?php echo (@$_GET['p'] == 'banner') ? 'menuAtivo' : ''; ?>">BANNER</a>
-
-            <a href="index.php?p=matriculas" class="<?php echo (@$_GET['p'] == 'matriculas') ? 'menuAtivo' : ''; ?>">MATRÍCULAS</a>
-
-            <a href="index.php?p=exercicios" class="<?php echo (@$_GET['p'] == 'exercicios') ? 'menuAtivo' : ''; ?>">EXERCÍCIOS</a>
-
-            <a href="index.php?p=aulas" class="<?php echo (@$_GET['p'] == 'aulas') ? 'menuAtivo' : ''; ?>">AULAS</a>
-
-            <a href="index.php?p=treinos" class="<?php echo (@$_GET['p'] == 'treinos') ? 'menuAtivo' : ''; ?>">TREINOS</a>
-
-            <a href="index.php?p=instrutores" class="<?php echo (@$_GET['p'] == 'instrutores') ? 'menuAtivo' : ''; ?>">INSTRUTORES</a>
-
-            <a href="index.php?p=alunos" class="<?php echo (@$_GET['p'] == 'alunos') ? 'menuAtivo' : ''; ?>">ALUNOS</a>
-
-            <a href="index.php?p=pagamentos" class="<?php echo (@$_GET['p'] == 'pagamentos') ? 'menuAtivo' : ''; ?>">PAGAMENTOS</a>
-
-            <a href="index.php?p=relatorio" class="<?php echo (@$_GET['p'] == 'relatorio') ? 'menuAtivo' : ''; ?>">RELATÓRIO</a>
-
-            <a href="index.php?p=contato" class="<?php echo (@$_GET['p'] == 'contato') ? 'menuAtivo' : ''; ?>">E-MAIL</a>
-
-            <a href="index.php?p=ajuda" class="<?php echo (@$_GET['p'] == 'ajuda') ? 'menuAtivo' : ''; ?>">AJUDA E SUPORTE</a>
 
         </aside>
 
